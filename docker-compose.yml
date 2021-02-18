@@ -11,10 +11,7 @@ services:
       - 5432:5432
     env_file:
       - .env
-
-
-
-      
+ 
   app:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
