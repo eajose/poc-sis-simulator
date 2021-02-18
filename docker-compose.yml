@@ -9,6 +9,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
+    env_file:
+      - .env
+
+
+
       
   app:
     build: .
@@ -19,3 +24,5 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    env_file:
+      - .env

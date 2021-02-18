@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import Csv, config
+
+
 
 import django_heroku
 
@@ -27,7 +30,7 @@ SECRET_KEY = 'pc8gq!s&y+@tscs*1fg$i3b3gt!(42avysmfmsrl)l(5vk_2na'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
